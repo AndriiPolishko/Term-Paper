@@ -1,0 +1,14 @@
+.searchBarWrap {
+  width:150px;
+  margin:10px;
+}
+
+.searchBarInputLabel {
+  width: inherit;
+}
+
+.searchBarInput {
+  width: inherit;
+}
+
+

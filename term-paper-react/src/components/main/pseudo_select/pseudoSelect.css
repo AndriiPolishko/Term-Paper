@@ -1,0 +1,58 @@
+.pseudoSelectWrap {
+  width: 250px;
+  padding: 0 10px;
+  margin: 20px 10px;
+  color: var(--big-element);
+  font-weight: bold;
+}
+
+.pseudoSelectInput {
+  background-color: var(--white);
+  display: flex;
+  width: 250px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+
+.leftMargin {
+  margin-left:15px;
+}
+.rightMargin {
+  margin-right: 15px;
+}
+
+.options {
+  color: var(--big-element);
+  background-color: var(--body);
+
+  font-weight: bold;
+  border-radius: 15px;
+  
+  max-height: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 70px;
+  margin: 5px 0 0 0;
+  z-index: 1;
+
+  overflow-y: scroll; 
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+}
+
+
+.option {
+  background-color: var(--button);
+  margin: 2px 0 0 0;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 2;
+  max-width: 175;
+  text-align: center;
+}
+
+.options::-webkit-scrollbar {
+  display: none;
+}

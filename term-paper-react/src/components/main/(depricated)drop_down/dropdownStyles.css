@@ -1,0 +1,51 @@
+.dd-wrapper {
+    width: 100px;
+    height: 30px;
+    background-color: var(--button);
+    border-radius: 100px;
+}
+
+.dd-header {
+    width: 100px;
+    height: 30px;
+    background-color: var(--button);
+    color: var(--body-color);
+    border:0;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.dd-headerTitle {
+    align-self: center;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.dd-headerTitleAngle {
+    align-self: center;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.dd-list {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 5px 0 0 0;
+}
+
+.dd-listItem {
+    border: none;
+    width: 90px;
+    color: var(--body-color);
+    background-color: var(--button);
+    font-weight: bold;
+    font-size: 1.15rem;
+    border-radius: 50px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
