@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from './Header';
-import './styles.css';
-import Main from './main/Main';
+import Header from '../components/Header';
+import '../components/styles.css';
+import Main from '../components/main/Main';
 
 const Homepage = (props) => {
   return (

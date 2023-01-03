@@ -2,12 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles.css';
 
-const Button = ({ name, link }) => {
-  return (
-    <a href={link}>
-      <button className="headerButton">{name}</button>
-    </a>
-  );
+const Button = ({ name }) => {
+  return <button className="headerButton">{name}</button>;
 };
 
 export default Button;

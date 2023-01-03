@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles.css';
+import '../../../components/styles.css';
 import UserIcon from './UserIcon';
 function UserStuffHolder() {
   return (

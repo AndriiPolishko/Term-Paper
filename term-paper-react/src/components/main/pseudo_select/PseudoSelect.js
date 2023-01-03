@@ -5,14 +5,18 @@ import './pseudoSelect.css';
 const PseudoSelect = ({ optionsArray, title }) => {
   const [fullTitle, setFullTitle] = useState(`Choose ${title}`);
   const [optionsOpen, setOptionsOpen] = useState(false);
+
   return (
-    <div className={'pseudoSelectWrap'}>
-      <div
-        className="pseudoSelectInput"
-        onClick={() => {
-          setOptionsOpen(!optionsOpen);
-        }}
-      >
+    <div
+      className={'filterWrap'}
+      onMouseEnter={() => {
+        setOptionsOpen(!optionsOpen);
+      }}
+      onMouseLeave={() => {
+        setOptionsOpen(!optionsOpen);
+      }}
+    >
+      <div className="pseudoSelectInput">
         <div className={('pseudoSelectTitle', 'leftMargin')}>{fullTitle}</div>
         <div className={('angleWrap', 'rightMargin')}>
           {optionsOpen ? (
