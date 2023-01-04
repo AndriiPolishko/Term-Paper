@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import { useLogin } from '../hooks/useLogin';
 const LogIn = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -9,6 +9,7 @@ const LogIn = () => {
   });
 
   const { email, password } = formData;
+  const { logIn, error, isLoading } = useLogin();
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -17,7 +18,11 @@ const LogIn = () => {
     }));
   };
 
-  const onSubmit = (e) => {};
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const { email, password } = formData;
+    await logIn(email, password);
+  };
 
   return (
     <>
@@ -50,10 +55,15 @@ const LogIn = () => {
             />
           </div>
           <div className="form-group">
-            <button type="submit" className="btn btn-block">
+            <button
+              disabled={isLoading}
+              type="submit"
+              className="btn btn-block"
+            >
               Submit
             </button>
           </div>
+          {error && <div className="error">{error}</div>}
         </form>
       </section>
     </>
