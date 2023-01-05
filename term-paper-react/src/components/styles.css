@@ -111,3 +111,14 @@
 .marginRight10 {
   margin-right: 10px;
 }
+
+.error {
+  margin: 10px 0;
+  background-color: var(--error);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}

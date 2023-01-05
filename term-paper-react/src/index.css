@@ -4,6 +4,7 @@
   --big-element: #0E5E6F;
   --button: #3A8891;
   --white: #fff;
+  --error: #b30d04;
 }
 * {
   margin: 0;

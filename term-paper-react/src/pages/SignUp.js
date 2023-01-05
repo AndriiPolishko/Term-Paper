@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSignup } from '../hooks/useSignup';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 import './login-signupStyles.css';
 
@@ -115,7 +115,7 @@ const SignUp = () => {
               Submit
             </button>
           </div>
-          {error && <div className="error">{error}</div>}
+          {error && <div className="error widthFull">{error}</div>}
         </form>
       </section>
       <div className="toLogIn">
