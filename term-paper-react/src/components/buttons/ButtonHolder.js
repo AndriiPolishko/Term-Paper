@@ -1,15 +1,14 @@
 import React from 'react';
 import '../styles.css';
-import Button from './Button.js';
 import { Link } from 'react-router-dom';
 const ButtonHolder = () => {
   return (
     <div className="buttonHolder">
       <Link to="/">
-        <Button name={'Home Page'} />
+        <button className="button marginRight10">Home Page</button>
       </Link>
 
-      <Button name={'Saved Housing'} />
+      <button className="button marginRight10">Saved Housing</button>
     </div>
   );
 };

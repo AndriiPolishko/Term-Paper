@@ -8,7 +8,7 @@ import LogIn from './pages/LogIn';
 import Header from './components/Header';
 const App = () => {
   return (
-    <>
+    <div className="body">
       <BrowserRouter>
         <Header />
         <Routes>
@@ -17,7 +17,7 @@ const App = () => {
           <Route path="/log-in" element={<LogIn />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 };
 

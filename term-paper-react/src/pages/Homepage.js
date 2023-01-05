@@ -6,9 +6,9 @@ import Main from '../components/main/Main';
 
 const Homepage = (props) => {
   return (
-    <div className="body">
+    <>
       <Main />
-    </div>
+    </>
   );
 };
 

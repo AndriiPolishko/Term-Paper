@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useSignup } from '../hooks/useSignup';
-
 import { Link } from 'react-router-dom';
+
+import './login-signupStyles.css';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -32,9 +33,9 @@ const SignUp = () => {
   };
 
   return (
-    <>
+    <div className="formContainer">
       <section className="heading">
-        <p>Please create an account</p>
+        <h3>Sign up</h3>
       </section>
 
       <section className="form">
@@ -109,7 +110,7 @@ const SignUp = () => {
             <button
               disabled={isLoading}
               type="submit"
-              className="btn btn-block"
+              className="button btn-block widthFull"
             >
               Submit
             </button>
@@ -123,7 +124,7 @@ const SignUp = () => {
           <p>Then log in!</p>
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 

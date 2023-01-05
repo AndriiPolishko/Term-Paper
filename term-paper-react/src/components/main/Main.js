@@ -21,17 +21,17 @@ const Main = () => {
     { id: 5, name: 'Zaporizhzhia' },
   ];
 
-  useEffect(() => {
-    const fetchHousings = async () => {
-      const response = await fetch('http://localhost:5000/api/housing');
-      const json = await response.json();
-      if (response.ok) {
-        console.log(json);
-        setHousings(json);
-      }
-    };
-    fetchHousings();
-  }, []);
+  // useEffect(() => {
+  //   const fetchHousings = async () => {
+  //     const response = await fetch('http://localhost:5000/api/housing');
+  //     const json = await response.json();
+  //     if (response.ok) {
+  //       console.log(json);
+  //       setHousings(json);
+  //     }
+  //   };
+  //   fetchHousings();
+  // }, []);
 
   return (
     <main className={'container'}>

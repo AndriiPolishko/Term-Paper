@@ -25,9 +25,9 @@ const LogIn = () => {
   };
 
   return (
-    <>
+    <div className="formContainer">
       <section className="heading">
-        <p>Please enter your login info</p>
+        <h3>Log in</h3>
       </section>
 
       <section className="form">
@@ -58,7 +58,7 @@ const LogIn = () => {
             <button
               disabled={isLoading}
               type="submit"
-              className="btn btn-block"
+              className="button widthFull btn-block"
             >
               Submit
             </button>
@@ -66,7 +66,7 @@ const LogIn = () => {
           {error && <div className="error">{error}</div>}
         </form>
       </section>
-    </>
+    </div>
   );
 };
 
