@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { useSignup } from '../hooks/useSignup';
 import { Link, Navigate } from 'react-router-dom';
 
-import './login-signupStyles.css';
-
 const SignUp = () => {
   const [formData, setFormData] = useState({
     firstName: '',

@@ -15,12 +15,12 @@ function UserStuffHolder() {
       {user && (
         <>
           <Link to="/">
-            <button className="button" onClick={onClick}>
+            <button className="button marginRight10" onClick={onClick}>
               Log out
             </button>
           </Link>
 
-          <div className="userProfile">{`${user.firstName} ${user.secondName}`}</div>
+          <button className="button">{`${user.firstName} ${user.secondName}`}</button>
         </>
       )}
       {!user && (
