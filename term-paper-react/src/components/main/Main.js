@@ -3,6 +3,8 @@ import InputBar from './search_bar/InputBar';
 import PseudoSelect from './pseudo_select/PseudoSelect';
 import { useState, useEffect } from 'react';
 
+import cities from '../../resources/cities.json'; //assert {type:'json'}
+
 const Main = () => {
   const [housings, setHousings] = useState(null);
   const housingTypes = [
@@ -10,15 +12,6 @@ const Main = () => {
     { id: 1, name: 'Rent Flat' },
     { id: 2, name: 'Buy House' },
     { id: 3, name: 'Rent House' },
-  ];
-
-  const cities = [
-    { id: 0, name: 'Kyiv' },
-    { id: 1, name: 'Lviv' },
-    { id: 2, name: 'Kharkiv' },
-    { id: 3, name: 'Kherson' },
-    { id: 4, name: 'Rivne' },
-    { id: 5, name: 'Zaporizhzhia' },
   ];
 
   // useEffect(() => {
@@ -35,9 +28,9 @@ const Main = () => {
 
   return (
     <main className={'container'}>
-      <div className={'filtersHolder'}>
+      <div className={'findHousingFilters'}>
         <PseudoSelect optionsArray={housingTypes} title="Housing Type" />
-        <InputBar optionsArray={cities} title="City" />
+        <InputBar optionsArray={cities.filteredCities} title="City" />
       </div>
       <div className="housingsContainer">
         {housings &&

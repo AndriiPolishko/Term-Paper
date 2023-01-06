@@ -117,7 +117,7 @@ const SignUp = () => {
         </form>
       </section>
       <div className="toLogIn">
-        <p>Do yoy have one already?</p>
+        <p>Do you have an account?</p>
         <Link to="/log-in">
           <p>Then log in!</p>
         </Link>

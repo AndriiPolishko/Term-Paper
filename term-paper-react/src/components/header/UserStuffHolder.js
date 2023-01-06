@@ -1,8 +1,8 @@
 import React from 'react';
-import '../../../components/styles.css';
-import { useLogout } from '../../../hooks/useLogout';
+import '../../components/styles.css';
+import { useLogout } from '../../hooks/useLogout';
 import { Link } from 'react-router-dom';
-import { useAuthContext } from '../../../hooks/useAuthContext';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 function UserStuffHolder() {
   const { user } = useAuthContext();
@@ -19,8 +19,9 @@ function UserStuffHolder() {
               Log out
             </button>
           </Link>
-
-          <button className="button">{`${user.firstName} ${user.secondName}`}</button>
+          <Link to="/user">
+            <button className="button">{`${user.firstName} ${user.secondName}`}</button>
+          </Link>
         </>
       )}
       {!user && (
