@@ -15,10 +15,10 @@
 
 .header {
   background-color: var(--big-element);
-  margin:15px auto;
+  margin: 15px auto;
   height: 70px;
   width: 95vw;
-  border-radius: 100px;
+  border-radius: 25px;
   display: flex;
   justify-content: space-between;
 }
@@ -26,11 +26,9 @@
 .buttonHolder {
   display: flex;
   align-items: center;
-  
-
 }
 
-.button{
+.button {
   background: var(--button);
   border: 0;
   color: #fff;
@@ -58,14 +56,29 @@
   background-color: var(--big-element);
   min-height: 600px;
   width: 95vw;
-  margin:10px auto;
+  margin: 10px auto;
   border-radius: 10px;
-}
-
-.findHousingFilters {
   display: flex;
 
 }
+
+.filtersContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  width: 300px;
+  align-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  margin: 20px;
+  background-color: var(--content);
+  border-radius: 5px;
+}
+
+.filters {}
 
 .filterWrap {
   width: 250px;
@@ -88,9 +101,11 @@
   margin: 5px 0 0 0;
   z-index: 1;
 
-  overflow-y: scroll; 
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
 }
 
 .option {
@@ -121,7 +136,7 @@
 
 .formContainer {
   align-self: center;
-  margin-top:50px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -162,25 +177,41 @@
   flex-direction: column;
 }
 
-.marginBottom10 {
-  margin-bottom: 10px;
+.ceil {
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
-.marginLeft40 {
-  margin-left:40px;
+.ceilHead {
+  align-self: center;
 }
 
-.leftMargin {
-  margin-left:15px;
-}
-.rightMargin {
-  margin-right: 15px;
+.ceilBody {
+  display: flex;
+  margin: 5px
 }
 
-.widthFull {
-  width: 100%;
+.ceilPicture {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
 }
 
-.marginRight10 {
-  margin-right: 10px;
+.ceilInfo {
+  margin-left: 20px;
+}
+
+.paginationWrap {
+  display: flex;
+}
+
+.pagBut {
+  margin-right: 3px;
+}
+
+.heart {
+  margin-left: 10px;
 }

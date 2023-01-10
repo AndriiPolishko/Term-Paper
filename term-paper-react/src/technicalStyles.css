@@ -1,0 +1,35 @@
+.marginBottom10 {
+  margin-bottom: 10px;
+}
+
+.marginLeft40 {
+  margin-left: 40px;
+}
+
+.leftMargin {
+  margin-left: 15px;
+}
+
+.rightMargin {
+  margin-right: 15px;
+}
+
+.widthFull {
+  width: 100%;
+}
+
+.marginRight10 {
+  margin-right: 10px;
+}
+
+.width200 {
+  width: 200px;
+}
+
+.height50 {
+  height: 50px;
+}
+
+.red {
+  color: var(--red)
+}

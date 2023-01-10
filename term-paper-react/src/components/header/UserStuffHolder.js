@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../components/styles.css';
 import { useLogout } from '../../hooks/useLogout';
 import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../hooks/useAuthContext';

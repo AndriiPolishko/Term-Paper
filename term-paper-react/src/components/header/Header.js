@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ButtonHolder from './ButtonHolder';
 import UserStuffHolder from './UserStuffHolder';
-import '../styles.css';
 
 const Header = (props) => {
   return (

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import './pseudoSelect.css';
-const PseudoSelect = ({ optionsArray, title }) => {
+const PseudoSelect = ({ optionsArray, title, passChildData }) => {
   const [fullTitle, setFullTitle] = useState(`Choose ${title}`);
   const [optionsOpen, setOptionsOpen] = useState(false);
 
@@ -36,6 +36,7 @@ const PseudoSelect = ({ optionsArray, title }) => {
                 onClick={() => {
                   setFullTitle(option.name);
                   setOptionsOpen(!optionsOpen);
+                  passChildData(option.name);
                 }}
               >
                 {' '}

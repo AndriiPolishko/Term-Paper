@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
 :root {
   --body-color: #F2DEBA;
   --big-element: #0E5E6F;
   --button: #3A8891;
   --white: #fff;
   --error: #b30d04;
+  --content: #067772;
+  --red: #fe878f;
 }
+
 * {
   margin: 0;
   padding: 0;

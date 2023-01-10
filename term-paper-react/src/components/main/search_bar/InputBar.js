@@ -2,9 +2,8 @@
 // !!!NOT COMPLETED!!!///
 // !!!NOT COMPLETED!!!///
 import { useState } from 'react';
-import '../../styles.css';
 import './inputBar.css';
-const InputBar = ({ optionsArray, title }) => {
+const InputBar = ({ optionsArray, title, passChildData }) => {
   const [isOptionsOpen, toggleIsOptionsOpen] = useState(false);
   const [placeholder] = useState(`Enter the ${title}`);
   const [inputted, setInputted] = useState('');
@@ -22,16 +21,16 @@ const InputBar = ({ optionsArray, title }) => {
       }}
       onMouseLeave={() => {
         isOptionsOpen === true && toggleIsOptionsOpen(!isOptionsOpen);
+        passChildData(inputted);
       }}
     >
       <label className="searchBarInputLabel" htmlFor="name" />
-      <div className=""></div>
       <input
         name="name"
         type={'text'}
         autoComplete="off"
         placeholder={placeholder}
-        className={'searchBarInput'}
+        className="searchBarInput"
         value={inputted}
         onChange={onChangeInputValue}
       />
@@ -46,9 +45,9 @@ const InputBar = ({ optionsArray, title }) => {
                 id={option.id}
                 className={'option'}
                 onClick={() => {
-                  console.log('hi');
                   setInputted(option.name);
                   toggleIsOptionsOpen(!isOptionsOpen);
+                  passChildData(option.name);
                 }}
               >
                 {option.name}
