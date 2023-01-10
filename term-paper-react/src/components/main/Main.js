@@ -40,7 +40,6 @@ const Main = () => {
 
     setIsLoading(true);
     fetchHousings();
-    console.log(highestPrice);
     setIsLoading(false);
   };
 

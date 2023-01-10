@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSignup } from '../hooks/useSignup';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -26,7 +26,6 @@ const SignUp = () => {
     e.preventDefault();
 
     const { firstName, secondName, email, city, password } = formData;
-    //console.log({ firstName, secondName, email, city, password }); GOOD
     await signUp(firstName, secondName, email, city, password);
   };
 

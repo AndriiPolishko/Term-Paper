@@ -17,7 +17,6 @@ function Housing({ housing, showHeart }) {
         body: JSON.stringify({ userId: user.id, housingId: id }),
       });
       const json = await res.json();
-      console.log(json);
     } else {
       const res = await fetch('http://localhost:5000/api/liked-housing', {
         method: 'DELETE',
@@ -25,7 +24,6 @@ function Housing({ housing, showHeart }) {
         body: JSON.stringify({ userId: user.id, housingId: id }),
       });
       const json = await res.json();
-      console.log(json);
     }
 
     setLiked(!liked);

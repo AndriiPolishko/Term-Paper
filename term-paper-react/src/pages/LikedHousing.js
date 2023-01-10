@@ -15,7 +15,6 @@ function LikedHousing() {
           new URLSearchParams({ userId: user.id })
       );
       const json = await res.json();
-      console.log(json);
       setLikedHousing(json.result);
     };
     setIsLoading(true);
