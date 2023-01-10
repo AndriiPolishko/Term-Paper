@@ -1,5 +1,6 @@
 import InputBar from './search_bar/InputBar';
 import PseudoSelect from './pseudo_select/PseudoSelect';
+import PriceFilter from './PriceFilter';
 import HousingContainer from './housing/HousingContainer';
 import Pagination from './housing/Pagination';
 import { useState, useEffect } from 'react';
@@ -15,12 +16,11 @@ const Main = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [housingsPerPage] = useState(3);
+  const [highestPrice, setHighestPrice] = useState(Infinity);
 
   let indexOfLastHousing;
   let indexOfFirstHousing;
   let currentHousing;
-
-  const [onSearch, setOnSearch] = useState(false);
 
   const search = (e) => {
     const fetchHousings = async () => {
@@ -29,6 +29,7 @@ const Main = () => {
           new URLSearchParams({
             city: chosenCity,
             housingType: chosenHousingType,
+            price: highestPrice,
           })
       );
       const json = await response.json();
@@ -39,7 +40,7 @@ const Main = () => {
 
     setIsLoading(true);
     fetchHousings();
-
+    console.log(highestPrice);
     setIsLoading(false);
   };
 
@@ -67,6 +68,7 @@ const Main = () => {
             title="City"
             passChildData={setChosenCity}
           />
+          <PriceFilter passChildData={setHighestPrice} />
         </div>
 
         <button className="button widthFull height50" onClick={search}>
