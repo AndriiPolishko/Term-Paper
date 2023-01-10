@@ -4,6 +4,7 @@ import HousingContainer from '../components/main/housing/HousingContainer';
 import Pagination from '../components/main/housing/Pagination';
 function LikedHousing() {
   const [likedHousing, setLikedHousing] = useState();
+  const [onlyIds, setOnlyIds] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const housingsPerPage = 3;
   const [isLoading, setIsLoading] = useState(false);
@@ -16,6 +17,7 @@ function LikedHousing() {
       );
       const json = await res.json();
       setLikedHousing(json.result);
+      setOnlyIds(json.result.map((ell) => ell.id));
     };
     setIsLoading(true);
     getLikedHousing();
@@ -44,6 +46,7 @@ function LikedHousing() {
               loading={isLoading}
               housings={currentHousing}
               showHeart={false}
+              likedHousing={onlyIds}
             />
             <Pagination
               housingsPerPage={housingsPerPage}

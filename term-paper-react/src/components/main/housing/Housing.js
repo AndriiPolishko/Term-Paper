@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FaHeart } from 'react-icons/fa';
 import { useAuthContext } from '../../../hooks/useAuthContext';
-function Housing({ housing, showHeart, isLikedAlready }) {
+function Housing({ housing, isLikedAlready }) {
   const { id, name, city, price, housing_type, housing_number, street } =
     housing;
   const [liked, setLiked] = useState(isLikedAlready);
@@ -31,7 +31,7 @@ function Housing({ housing, showHeart, isLikedAlready }) {
       <section className="ceilHead">
         <h3>
           {name}
-          {showHeart && user && (
+          {user && (
             <FaHeart className={liked ? 'heart red' : 'heart'} onClick={like} />
           )}
         </h3>
