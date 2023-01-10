@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 
 import { useAuthContext } from '../../hooks/useAuthContext';
-import InputBar from './search_bar/InputBar';
-import PseudoSelect from './pseudo_select/PseudoSelect';
-import PriceFilter from './PriceFilter';
+import InputBar from './filters/InputBar';
+import PseudoSelect from './filters/PseudoSelect';
+import PriceFilter from './filters/PriceFilter';
 import HousingContainer from './housing/HousingContainer';
 import Pagination from './housing/Pagination';
 
@@ -75,9 +75,9 @@ const Main = () => {
       setOnlyIds(json.result.map((ell) => ell.id));
     };
     setIsLoading(true);
-    getLikedHousing();
+    if (user) getLikedHousing();
     setIsLoading(false);
-  }, [user.id, likedHousing]);
+  }, [likedHousing, user]);
 
   return (
     <main className={'container'}>

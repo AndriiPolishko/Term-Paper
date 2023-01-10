@@ -41,6 +41,9 @@ const LogIn = () => {
               value={email}
               placeholder="Enter your email"
               onChange={onChange}
+              required={true}
+              minLength={5}
+              maxLength={30}
             />
           </div>
           <div className="form-group">
@@ -52,6 +55,9 @@ const LogIn = () => {
               value={password}
               placeholder="Enter password"
               onChange={onChange}
+              required={true}
+              minLength={5}
+              maxLength={20}
             />
           </div>
           <div className="form-group">

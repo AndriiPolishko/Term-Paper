@@ -33,3 +33,11 @@
 .red {
   color: var(--red)
 }
+
+.form-group input:valid {
+  border: 3px solid var(--green);
+}
+
+.form-group input:invalid {
+  border: 3px solid var(--red);
+}

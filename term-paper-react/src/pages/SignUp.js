@@ -11,6 +11,9 @@ const SignUp = () => {
     password: '',
     password2: '',
   });
+
+  const [passwordValid, setPasswordValid] = useState(false);
+
   const { signUp, error, isLoading } = useSignup();
 
   const { firstName, secondName, email, city, password, password2 } = formData;
@@ -46,6 +49,9 @@ const SignUp = () => {
               value={firstName}
               placeholder="Enter your firs name"
               onChange={onChange}
+              required={true}
+              minLength={2}
+              maxLength={20}
             />
           </div>
           <div className="form-group">
@@ -57,6 +63,9 @@ const SignUp = () => {
               value={secondName}
               placeholder="Enter your second name"
               onChange={onChange}
+              required={true}
+              minLength={2}
+              maxLength={20}
             />
           </div>
           <div className="form-group">
@@ -68,6 +77,9 @@ const SignUp = () => {
               value={email}
               placeholder="Enter your email"
               onChange={onChange}
+              required={true}
+              minLength={5}
+              maxLength={30}
             />
           </div>
           <div className="form-group">
@@ -79,6 +91,9 @@ const SignUp = () => {
               value={city}
               placeholder="Enter your city"
               onChange={onChange}
+              required={true}
+              minLength={3}
+              maxLength={20}
             />
           </div>
           <div className="form-group">
@@ -90,9 +105,12 @@ const SignUp = () => {
               value={password}
               placeholder="Enter password"
               onChange={onChange}
+              required={true}
+              minLength={5}
+              maxLength={20}
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <input
               type="password"
               className="form-control"
@@ -101,8 +119,12 @@ const SignUp = () => {
               value={password2}
               placeholder="Confirm password"
               onChange={onChange}
+              required={true}
+              minLength={5}
+              maxLength={20}
+          
             />
-          </div>
+          </div> */}
           <div className="form-group">
             <button
               disabled={isLoading}
@@ -111,8 +133,8 @@ const SignUp = () => {
             >
               Submit
             </button>
+            {error && <div className="error">{error}</div>}
           </div>
-          {error && <div className="error widthFull">{error}</div>}
         </form>
       </section>
       <div className="toLogIn">

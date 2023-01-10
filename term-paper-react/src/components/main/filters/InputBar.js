@@ -1,8 +1,4 @@
-// !!!NOT COMPLETED!!!///
-// !!!NOT COMPLETED!!!///
-// !!!NOT COMPLETED!!!///
 import { useState } from 'react';
-import './inputBar.css';
 const InputBar = ({ optionsArray, title, passChildData }) => {
   const [isOptionsOpen, toggleIsOptionsOpen] = useState(false);
   const [placeholder] = useState(`Enter the ${title}`);

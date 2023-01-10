@@ -3,7 +3,11 @@
   padding: 0;
 }
 
-.body {
+body {
+  background-color: var(--body-color);
+}
+
+#root {
   display: flex;
   flex-direction: column;
   background-color: var(--body-color);
@@ -54,7 +58,7 @@
 
 .container {
   background-color: var(--big-element);
-  min-height: 600px;
+  min-height: 550px;
   width: 95vw;
   margin: 10px auto;
   border-radius: 10px;
@@ -69,6 +73,7 @@
   width: 300px;
   align-content: center;
   align-items: center;
+  justify-content: space-between;
 }
 
 .content {
@@ -77,8 +82,6 @@
   background-color: var(--content);
   border-radius: 5px;
 }
-
-.filters {}
 
 .filterWrap {
   width: 250px;
@@ -128,10 +131,9 @@
   background-color: var(--error);
   border: 0;
   color: #fff;
-  padding: 10px;
+  padding: 5px;
   font-family: "Poppins";
   border-radius: 4px;
-  cursor: pointer;
 }
 
 .formContainer {
@@ -155,6 +157,21 @@
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+.searchBarInput {
+  background-color: var(--white);
+  display: flex;
+  width: 216px;
+  height: 20px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  text-justify: auto;
+  padding: 0 15px;
+  font-weight: bold;
+  color: var(--big-element)
+}
+
 
 .userData {
   margin: 20px;
@@ -214,4 +231,14 @@
 
 .heart {
   margin-left: 10px;
+}
+
+.pseudoSelectInput {
+  background-color: var(--white);
+  display: flex;
+  width: 250px;
+  height: 20px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
 }

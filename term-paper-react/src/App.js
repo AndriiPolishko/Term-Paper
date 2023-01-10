@@ -13,31 +13,29 @@ import Header from './components/header/Header';
 const App = () => {
   const { user } = useAuthContext();
   return (
-    <div className="body">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route
-            path="/sign-up"
-            element={!user ? <SignUp /> : <Navigate to="/" />}
-          />
-          <Route
-            path="/log-in"
-            element={!user ? <LogIn /> : <Navigate to="/" />}
-          />
-          <Route
-            path="/user"
-            element={user ? <UserPage /> : <Navigate to="/log-in" />}
-          />
-          <Route
-            path="/likedHousing"
-            element={user ? <LikedHousing /> : <Navigate to="/log-in" />}
-          />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route
+          path="/sign-up"
+          element={!user ? <SignUp /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/log-in"
+          element={!user ? <LogIn /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/user"
+          element={user ? <UserPage /> : <Navigate to="/log-in" />}
+        />
+        <Route
+          path="/likedHousing"
+          element={user ? <LikedHousing /> : <Navigate to="/log-in" />}
+        />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
