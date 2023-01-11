@@ -9,6 +9,9 @@ import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
 import UserPage from './pages/UserPage';
 import LikedHousing from './pages/LikedHousing';
+import Users from './pages/adminPages/Users';
+import Realtors from './pages/adminPages/Realtors';
+import Housings from './pages/adminPages/Housings';
 import Header from './components/header/Header';
 const App = () => {
   const { user } = useAuthContext();
@@ -33,6 +36,24 @@ const App = () => {
           path="/likedHousing"
           element={user ? <LikedHousing /> : <Navigate to="/log-in" />}
         />
+        <Route
+          path="/allHousings"
+          element={
+            user && user.isAdmin ? <Housings /> : <Navigate to="/log-in" />
+          }
+        />
+
+        <Route
+          path="/allUsers"
+          element={user && user.isAdmin ? <Users /> : <Navigate to="/log-in" />}
+        />
+        <Route
+          path="/allRealtors"
+          element={
+            user && user.isAdmin ? <Realtors /> : <Navigate to="/log-in" />
+          }
+        />
+
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

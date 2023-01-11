@@ -12,6 +12,43 @@ const ButtonHolder = () => {
           <button className="button marginRight10">Saved Housing</button>
         </Link>
       )}
+      {user && user.isAdmin && (
+        <>
+          <Link to="/allUsers">
+            <button
+              className="button marginRight10"
+              style={{
+                backgroundColor: 'var(--yellow)',
+                color: 'var(--black)',
+              }}
+            >
+              Users
+            </button>
+          </Link>
+          <Link to="/allRealtors">
+            <button
+              className="button marginRight10"
+              style={{
+                backgroundColor: 'var(--yellow)',
+                color: 'var(--black)',
+              }}
+            >
+              Realtors
+            </button>
+          </Link>
+          <Link to="allHousings">
+            <button
+              className="button marginRight10"
+              style={{
+                backgroundColor: 'var(--yellow)',
+                color: 'var(--black)',
+              }}
+            >
+              Housings
+            </button>
+          </Link>
+        </>
+      )}
     </div>
   );
 };

@@ -41,3 +41,7 @@
 .form-group input:invalid {
   border: 3px solid var(--red);
 }
+
+.backgroundTransparentGray {
+  background-color: var(--transparent-gray);
+}

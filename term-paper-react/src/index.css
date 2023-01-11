@@ -8,7 +8,10 @@
   --error: #b30d04;
   --content: #067772;
   --red: #fe878f;
-  --green: #04b31f
+  --green: #04b31f;
+  --transparent-white: rgba(255, 255, 255, 0.5);
+  --yellow: #e9f239;
+  --black: #000000;
 }
 
 * {

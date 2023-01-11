@@ -1,10 +1,11 @@
 import React from 'react';
 import { useAuthContext } from '../hooks/useAuthContext';
+import ModalWindow from '../components/ModalWindow';
 
 function UserPage() {
   const { user } = useAuthContext();
   return (
-    <main className={'container'}>
+    <main className={'container '}>
       <div className="userData">
         <div className="fieldHolder">
           <span>First name: </span>
@@ -28,6 +29,7 @@ function UserPage() {
           <button className="button marginBottom10">Change password</button>
         </div>
       </div>
+      {/* <ModalWindow /> */}
     </main>
   );
 }
