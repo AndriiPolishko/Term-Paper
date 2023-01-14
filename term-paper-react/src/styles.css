@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--body-color);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--body-color);
+  width: 100vw;
+  height: 100vh;
+  align-content: center;
+  font-weight: 600;
+}
+
+.header {
+  background-color: var(--big-element);
+  margin: 15px auto;
+  min-height: 60px;
+  width: 95vw;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonHolder {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  background: var(--button);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.userStuffHolder {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+
+#userIcon {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: var(--white);
+}
+
+.container {
+  background-color: var(--big-element);
+  min-height: 550px;
+  width: 95vw;
+  margin: 10px auto;
+  border-radius: 10px;
+  display: flex;
+}
+
+.filtersContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  width: 300px;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content {
+  width: 100%;
+  margin: 20px;
+  background-color: var(--content);
+  border-radius: 5px;
+}
+
+.filterWrap {
+  width: 250px;
+  padding: 0 10px;
+  margin: 20px 10px;
+  color: var(--big-element);
+  font-weight: bold;
+}
+
+.options {
+  color: var(--big-element);
+  background-color: var(--body);
+  font-weight: bold;
+  border-radius: 15px;
+  max-height: 75px;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 80px;
+  margin: 5px 0 0 0;
+  z-index: 1;
+
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+}
+
+.option {
+  background-color: var(--button);
+  margin: 1px 0;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 2;
+  max-width: 175;
+  height: 25px;
+  text-align: center;
+}
+
+.options::-webkit-scrollbar {
+  display: none;
+}
+
+.error {
+  margin: 10px 0;
+  background-color: var(--error);
+  border: 0;
+  color: #fff;
+  padding: 5px;
+  font-family: "Poppins";
+  border-radius: 4px;
+}
+
+.formContainer {
+  align-self: center;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  min-height: fit-content;
+  min-width: fit-content;
+
+  border: 1px solid black;
+}
+
+.form-control {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.searchBarInput {
+  background-color: var(--white);
+  display: flex;
+  width: 216px;
+  height: 20px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  text-justify: auto;
+  padding: 0 15px;
+  font-weight: bold;
+  color: var(--big-element)
+}
+
+
+.userData {
+  margin: 20px;
+  padding: 15px;
+  background-color: var(--white);
+  width: 20%;
+  min-width: fit-content;
+  height: 80%;
+  border-radius: 25px;
+}
+
+.fieldHolder {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.ceil {
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ceilHead {
+  align-self: center;
+}
+
+.ceilBody {
+  display: flex;
+  margin: 5px
+}
+
+.ceilPicture {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.ceilInfo {
+  margin-left: 20px;
+}
+
+.paginationWrap {
+  display: flex;
+}
+
+.pagBut {
+  margin-right: 3px;
+}
+
+.heart {
+  margin-left: 10px;
+}
+
+.pseudoSelectInput {
+  background-color: var(--white);
+  display: flex;
+  width: 250px;
+  height: 20px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+
+.modalWindow {
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--transparent-white);
+  width: 400px;
+  max-width: 100%;
+  height: 200px;
+  max-height: 100%;
+  border-radius: 15%;
+  box-shadow: 0px 15px 50px var(--transparent-white);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}

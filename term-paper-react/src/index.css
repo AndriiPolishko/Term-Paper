@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+:root {
+  --body-color: #F2DEBA;
+  --big-element: #0E5E6F;
+  --button: #3A8891;
+  --white: #fff;
+  --error: #b30d04;
+  --content: #067772;
+  --red: #fe878f;
+  --green: #04b31f;
+  --transparent-white: rgba(255, 255, 255, 0.5);
+  --yellow: #e9f239;
+  --black: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Poppins', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

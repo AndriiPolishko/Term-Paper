@@ -1,0 +1,6 @@
+{"housingTypes":[
+  { "id": 0, "name": "Buy Flat" },
+  { "id": 1, "name": "Rent Flat" },
+  { "id": 2, "name": "Buy House" },
+  { "id": 3, "name": "Rent House" }
+]}
