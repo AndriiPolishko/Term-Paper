@@ -1,13 +1,13 @@
 import React from 'react';
 
 function Pagination({
-  housingsPerPage,
-  totalHousings,
+  itemsPerPage,
+  totalItems,
   paginate,
   updateLikedHousings,
 }) {
   const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(totalHousings / housingsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
     pageNumbers.push(i);
   }
 

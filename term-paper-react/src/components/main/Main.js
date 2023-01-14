@@ -106,7 +106,7 @@ const Main = () => {
             <HousingContainer
               loading={isLoading}
               housings={currentHousing}
-              showHeart={true}
+              likeOrCross={true}
               likedHousing={likedHousing}
             />
             <Pagination

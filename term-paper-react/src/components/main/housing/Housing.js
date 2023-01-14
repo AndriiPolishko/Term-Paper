@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { FaHeart } from 'react-icons/fa';
+import { ImCross } from 'react-icons/im';
 import { useAuthContext } from '../../../hooks/useAuthContext';
-function Housing({ housing, isLikedAlready }) {
+function Housing({ housing, isLikedAlready, likeOrCross }) {
   const { id, name, city, price, housing_type, housing_number, street } =
     housing;
   const [liked, setLiked] = useState(isLikedAlready);
@@ -26,13 +27,25 @@ function Housing({ housing, isLikedAlready }) {
 
     setLiked(!liked);
   };
+
+  const deletion = async () => {
+    await fetch('http://localhost:5000/api/housing/' + id, {
+      method: 'DELETE',
+    });
+  };
   return (
     <div className="ceil">
       <section className="ceilHead">
         <h3>
           {name}
-          {user && (
+          {likeOrCross && user && (
             <FaHeart className={liked ? 'heart red' : 'heart'} onClick={like} />
+          )}
+          {!likeOrCross && (
+            <ImCross
+              style={{ color: 'var(--red)', marginLeft: '5px' }}
+              onClick={deletion}
+            />
           )}
         </h3>
       </section>

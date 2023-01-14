@@ -107,7 +107,7 @@ const SignUp = () => {
               onChange={onChange}
               required={true}
               minLength={5}
-              maxLength={20}
+              maxLength={64}
             />
           </div>
           {/* <div className="form-group">
@@ -121,7 +121,7 @@ const SignUp = () => {
               onChange={onChange}
               required={true}
               minLength={5}
-              maxLength={20}
+              maxLength={64}
           
             />
           </div> */}
