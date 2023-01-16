@@ -45,12 +45,12 @@ function LikedHousing() {
             <HousingContainer
               loading={isLoading}
               housings={currentHousing}
-              showHeart={false}
+              likeOrCross={true}
               likedHousing={onlyIds}
             />
             <Pagination
-              housingsPerPage={housingsPerPage}
-              totalHousings={likedHousing.length}
+              itemsPerPage={housingsPerPage}
+              totalItems={likedHousing.length}
               paginate={paginate}
             />
           </>
