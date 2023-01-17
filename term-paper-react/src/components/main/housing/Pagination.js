@@ -20,7 +20,8 @@ function Pagination({
             paginate(page);
             if (updateLikedHousings) updateLikedHousings();
           }}
-          className="pagBut button"
+          className="button"
+          style={{ marginRight: '3px' }}
         >
           {page}
         </button>

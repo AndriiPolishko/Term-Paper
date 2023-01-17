@@ -12,11 +12,9 @@ const SignUp = () => {
     password2: '',
   });
 
-  const [passwordValid, setPasswordValid] = useState(false);
-
   const { signUp, error, isLoading } = useSignup();
 
-  const { firstName, secondName, email, city, password, password2 } = formData;
+  const { firstName, secondName, email, city, password } = formData;
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -110,21 +108,6 @@ const SignUp = () => {
               maxLength={64}
             />
           </div>
-          {/* <div className="form-group">
-            <input
-              type="password"
-              className="form-control"
-              id="password2"
-              name="password2"
-              value={password2}
-              placeholder="Confirm password"
-              onChange={onChange}
-              required={true}
-              minLength={5}
-              maxLength={64}
-          
-            />
-          </div> */}
           <div className="form-group">
             <button
               disabled={isLoading}

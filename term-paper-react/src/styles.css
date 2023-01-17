@@ -80,6 +80,9 @@ body {
   margin: 20px;
   background-color: var(--content);
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .filterWrap {
@@ -220,13 +223,10 @@ body {
   margin-left: 20px;
 }
 
-.paginationWrap {
-  display: flex;
+.pagWrap {
+  margin: 10px
 }
 
-.pagBut {
-  margin-right: 3px;
-}
 
 .heart {
   margin-left: 10px;
@@ -286,5 +286,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+
+.adminForm {
+  width: 50%;
+  margin: 20px 20px 20px 5px;
+  background-color: var(--content);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }

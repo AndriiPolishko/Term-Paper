@@ -1,18 +1,26 @@
-import { useState } from 'react';
 import { ImCross } from 'react-icons/im';
-import { useAuthContext } from '../hooks/useAuthContext';
 
-function UserBlock({ user }) {
-  const { id, first_name, second_name, city, email, is_admin } = user;
-  const linkToPhoto =
-    'https://media.istockphoto.com/id/155666671/vector/vector-illustration-of-red-house-icon.jpg?s=612x612&w=0&k=20&c=tBqaabvmjFOBVUibZxbd8oWJqrFR5dy-l2bEDJMtZ40=';
-
-  const { currentUser } = useAuthContext();
+function UserBlock({ user, type, passChildParam }) {
+  const { first_name, second_name, city, email, is_admin } = user;
+  const { score } = user;
 
   const deletion = async () => {
-    await fetch('http://localhost:5000/api/user/' + id, {
-      method: 'DELETE',
-    });
+    if (type === 'user') {
+      await fetch('http://localhost:5000/api/user?email=' + email, {
+        method: 'DELETE',
+      });
+      const res = await fetch('http://localhost:5000/api/user');
+      const json = await res.json();
+      passChildParam(json);
+    } else if (type === 'realtor') {
+      console.log(email);
+      await fetch('http://localhost:5000/api/realtor?email=' + email, {
+        method: 'DELETE',
+      });
+      const res = await fetch('http://localhost:5000/api/realtor');
+      const json = await res.json();
+      passChildParam(json);
+    }
   };
   return (
     <div className="ceil">
@@ -31,6 +39,7 @@ function UserBlock({ user }) {
         <div className="ceilInfo">
           <p>Email: {email}</p>
           <p>City: {city}</p>
+          {score && <p>City: {score}</p>}
         </div>
       </div>
     </div>

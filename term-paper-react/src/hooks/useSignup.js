@@ -9,14 +9,7 @@ export const useSignup = () => {
 
   const navigate = useNavigate();
 
-  const signUp = async (
-    firstName,
-    secondName,
-    email,
-    city,
-    password,
-    password2
-  ) => {
+  const signUp = async (firstName, secondName, email, city, password) => {
     setIsLoading(true);
     setError(null);
 
@@ -29,7 +22,6 @@ export const useSignup = () => {
         email,
         city,
         password,
-        password2,
       }),
     });
     const json = await response.json();
