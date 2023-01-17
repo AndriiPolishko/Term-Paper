@@ -27,12 +27,7 @@ function UserBlock({ user, type, passChildParam }) {
       <section className="ceilHead">
         <h3>
           {`${first_name} ${second_name}`}
-          {!is_admin && (
-            <ImCross
-              style={{ color: 'var(--red)', marginLeft: '5px' }}
-              onClick={deletion}
-            />
-          )}
+          {!is_admin && <ImCross className="cross" onClick={deletion} />}
         </h3>
       </section>
       <div className="ceilBody">

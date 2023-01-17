@@ -39,83 +39,85 @@ function UserPage() {
           <span>City: </span>
           <span>{user.city}</span>
         </div>
-        <div className="buttonContainer flexColumn ">
-          <button
-            className="button marginBottom10"
-            onClick={() => {
-              toggleTheButton(
-                firstNameDialogWindowOn,
-                setFirstNameDialogWindowOn,
-                setSecondNameDialogWindowOn,
-                setEmailDialogWindowOn,
-                setPasswordDialogWindowOn,
-                setCityDialogWindowOn
-              );
-            }}
-          >
-            Change first name
-          </button>
-          <button
-            className="button marginBottom10"
-            onClick={() => {
-              toggleTheButton(
-                secondNameDialogWindowOn,
-                setSecondNameDialogWindowOn,
-                setFirstNameDialogWindowOn,
-                setEmailDialogWindowOn,
-                setPasswordDialogWindowOn,
-                setCityDialogWindowOn
-              );
-            }}
-          >
-            Change second name
-          </button>
-          <button
-            className="button marginBottom10"
-            onClick={() => {
-              toggleTheButton(
-                emailDialogWindowOn,
-                setEmailDialogWindowOn,
-                setFirstNameDialogWindowOn,
-                setSecondNameDialogWindowOn,
-                setPasswordDialogWindowOn,
-                setCityDialogWindowOn
-              );
-            }}
-          >
-            Change email
-          </button>
-          <button
-            className="button marginBottom10"
-            onClick={() => {
-              toggleTheButton(
-                cityDialogWindowOn,
-                setCityDialogWindowOn,
-                setSecondNameDialogWindowOn,
-                setEmailDialogWindowOn,
-                setFirstNameDialogWindowOn,
-                setPasswordDialogWindowOn
-              );
-            }}
-          >
-            Change city
-          </button>
-          <button
-            className="button marginBottom10"
-            onClick={() => {
-              toggleTheButton(
-                passwordDialogWindowOn,
-                setPasswordDialogWindowOn,
-                setSecondNameDialogWindowOn,
-                setFirstNameDialogWindowOn,
-                setEmailDialogWindowOn,
-                setCityDialogWindowOn
-              );
-            }}
-          >
-            Change password
-          </button>
-        </div>
+        {!user.isAdmin && (
+          <div className="buttonContainer flexColumn ">
+            <button
+              className="button marginBottom10"
+              onClick={() => {
+                toggleTheButton(
+                  firstNameDialogWindowOn,
+                  setFirstNameDialogWindowOn,
+                  setSecondNameDialogWindowOn,
+                  setEmailDialogWindowOn,
+                  setPasswordDialogWindowOn,
+                  setCityDialogWindowOn
+                );
+              }}
+            >
+              Change first name
+            </button>
+            <button
+              className="button marginBottom10"
+              onClick={() => {
+                toggleTheButton(
+                  secondNameDialogWindowOn,
+                  setSecondNameDialogWindowOn,
+                  setFirstNameDialogWindowOn,
+                  setEmailDialogWindowOn,
+                  setPasswordDialogWindowOn,
+                  setCityDialogWindowOn
+                );
+              }}
+            >
+              Change second name
+            </button>
+            <button
+              className="button marginBottom10"
+              onClick={() => {
+                toggleTheButton(
+                  emailDialogWindowOn,
+                  setEmailDialogWindowOn,
+                  setFirstNameDialogWindowOn,
+                  setSecondNameDialogWindowOn,
+                  setPasswordDialogWindowOn,
+                  setCityDialogWindowOn
+                );
+              }}
+            >
+              Change email
+            </button>
+            <button
+              className="button marginBottom10"
+              onClick={() => {
+                toggleTheButton(
+                  cityDialogWindowOn,
+                  setCityDialogWindowOn,
+                  setSecondNameDialogWindowOn,
+                  setEmailDialogWindowOn,
+                  setFirstNameDialogWindowOn,
+                  setPasswordDialogWindowOn
+                );
+              }}
+            >
+              Change city
+            </button>
+            <button
+              className="button marginBottom10"
+              onClick={() => {
+                toggleTheButton(
+                  passwordDialogWindowOn,
+                  setPasswordDialogWindowOn,
+                  setSecondNameDialogWindowOn,
+                  setFirstNameDialogWindowOn,
+                  setEmailDialogWindowOn,
+                  setCityDialogWindowOn
+                );
+              }}
+            >
+              Change password
+            </button>
+          </div>
+        )}
       </div>
       {firstNameDialogWindowOn && (
         <TextModal

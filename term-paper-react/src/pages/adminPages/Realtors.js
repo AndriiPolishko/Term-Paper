@@ -7,12 +7,12 @@ function Realtors() {
   const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 3;
   useEffect(() => {
-    const fetchUsers = async () => {
+    const fetchRealtors = async () => {
       const res = await fetch('http://localhost:5000/api/realtor');
       const json = await res.json();
       setRealtors(json);
     };
-    fetchUsers();
+    fetchRealtors();
   }, []);
 
   let indexOfLastHousing, indexOfFirstHousing, currentUsers;

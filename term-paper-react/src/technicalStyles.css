@@ -34,6 +34,10 @@
   color: var(--red)
 }
 
+.yellow {
+  color: var(--yellow)
+}
+
 .form-group input:valid {
   border: 3px solid var(--green);
 }

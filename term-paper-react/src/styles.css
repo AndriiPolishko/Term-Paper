@@ -58,7 +58,7 @@ body {
 
 .container {
   background-color: var(--big-element);
-  min-height: 550px;
+  min-height: 650px;
   width: 95vw;
   margin: 10px auto;
   border-radius: 10px;
@@ -210,7 +210,8 @@ body {
 
 .ceilBody {
   display: flex;
-  margin: 5px
+  margin: 5px;
+  align-items: center;
 }
 
 .ceilPicture {
@@ -272,7 +273,7 @@ body {
 
 .cross {
   width: 15px;
-  margin-right: 10px;
+  margin: 0 10px;
   color: var(--red);
   cursor: pointer;
 }
@@ -297,4 +298,29 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.innerContainer {
+  padding: 5px;
+  border: 1px solid var(--button);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.innerContainer h4 {
+  color: var(--white)
+}
+
+.star {
+  width: 30px;
+  height: 30px;
+}
+
+.scores div {
+  display: inline;
+}
+
+.pointer {
+  cursor: pointer;
 }

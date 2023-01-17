@@ -1,6 +1,12 @@
 import React from 'react';
 import Housing from './Housing';
-function HousingContainer({ loading, housings, likedHousing, likeOrCross }) {
+function HousingContainer({
+  loading,
+  housings,
+  likedHousing,
+  likeOrCross,
+  passChildParam,
+}) {
   if (loading) {
     return <h3>Loading...</h3>;
   }
@@ -16,6 +22,7 @@ function HousingContainer({ loading, housings, likedHousing, likeOrCross }) {
           key={housing.id}
           isLikedAlready={safeLikedHousing.includes(housing.id)}
           likeOrCross={likeOrCross}
+          passChildParam={passChildParam}
         />
       ))}
     </div>

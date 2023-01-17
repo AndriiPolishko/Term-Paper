@@ -3,6 +3,7 @@ const InputBar = ({ optionsArray, title, passChildData }) => {
   const [isOptionsOpen, toggleIsOptionsOpen] = useState(false);
   const [placeholder] = useState(`Enter the ${title}`);
   const [inputted, setInputted] = useState('');
+  const safeOptions = optionsArray ? optionsArray : [];
 
   function onChangeInputValue(e) {
     const value = e.target.value;
@@ -32,7 +33,7 @@ const InputBar = ({ optionsArray, title, passChildData }) => {
       />
       {isOptionsOpen ? (
         <div className="options">
-          {optionsArray.map((option) =>
+          {safeOptions.map((option) =>
             option.name
               .toLocaleLowerCase()
               .startsWith(inputted.toLocaleLowerCase()) ? (

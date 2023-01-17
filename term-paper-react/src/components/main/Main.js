@@ -7,6 +7,8 @@ import PriceFilter from './filters/PriceFilter';
 import HousingContainer from './housing/HousingContainer';
 import Pagination from './housing/Pagination';
 
+import RealtorContainer from './realtor/RealtorContainer';
+
 import cities from '../../resources/cities.json';
 import housingTypes from '../../resources/housingTypes.json';
 
@@ -29,6 +31,11 @@ const Main = () => {
   let indexOfFirstHousing;
   let currentHousing;
 
+  const [searchRealtorsDisable, setSearchRealtorsDisable] = useState(true);
+  const [score, setScore] = useState();
+  const [realtorEmail, setRealtorEmail] = useState();
+  const [realtors, setRealtors] = useState();
+
   const updateLikedHousings = () => {
     setLikedHousing(onlyIds);
   };
@@ -46,6 +53,7 @@ const Main = () => {
       const json = await response.json();
       if (response.ok) {
         setHousings(json);
+        setRealtors(undefined);
       }
       updateLikedHousings();
     };
@@ -72,32 +80,110 @@ const Main = () => {
           new URLSearchParams({ userId: user.id })
       );
       const json = await res.json();
-      setOnlyIds(json.result.map((ell) => ell.id));
+      if (json.result) setOnlyIds(json.result.map((ell) => ell.id));
     };
     setIsLoading(true);
     if (user) getLikedHousing();
     setIsLoading(false);
   }, [likedHousing, user]);
 
+  const searchRealtors = async () => {
+    const res = await fetch(
+      'http://localhost:5000/api/realtor/byEmailAndScore?' +
+        new URLSearchParams({ email: realtorEmail, score })
+    );
+    const json = await res.json();
+    setHousings(undefined);
+    setRealtors(json);
+  };
+
+  const validateRealtorFields = (e) => {
+    if (e.target.id === 'scoreFilter') {
+      const value = e.target.value;
+      if (+value >= 1 && +value <= 5 && /^[0-9]+$/.test(value)) {
+        setScore(value);
+      } else {
+        setScore(undefined);
+      }
+    } else if (e.target.id === 'realtorEmail') {
+      const value = e.target.value;
+      if (
+        value.match(
+          /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        )
+      ) {
+        setRealtorEmail(value);
+      } else {
+        setRealtorEmail(undefined);
+      }
+    }
+    if (score) {
+      setSearchRealtorsDisable(false);
+    } else {
+      setSearchRealtorsDisable(true);
+    }
+  };
+
   return (
     <main className={'container'}>
       <div className={'filtersContainer'}>
-        <div className="filters">
-          <PseudoSelect
-            optionsArray={housingTypes.housingTypes}
-            title="Housing Type"
-            passChildData={setChosenHousingType}
-          />
-          <InputBar
-            optionsArray={cities.filteredCities}
-            title="City"
-            passChildData={setChosenCity}
-          />
-          <PriceFilter passChildData={setHighestPrice} />
+        <div className="filters" onMouseLeave={validateRealtorFields}>
+          <div className="innerContainer">
+            <h4>Hosing filters</h4>
+            <PseudoSelect
+              optionsArray={housingTypes.housingTypes}
+              title="Housing Type"
+              passChildData={setChosenHousingType}
+            />
+            <InputBar
+              optionsArray={cities.filteredCities}
+              title="City"
+              passChildData={setChosenCity}
+            />
+            <PriceFilter passChildData={setHighestPrice} />
+          </div>
+          <div className="innerContainer" style={{ marginTop: '5px' }}>
+            <h4>Realtor filters</h4>
+            <div className="filterWrap">
+              <input
+                type="email"
+                id="realtorEmail"
+                className="searchBarInput"
+                placeholder={'Input the realtors email'}
+                onChange={validateRealtorFields}
+                onMouseLeave={validateRealtorFields}
+              />
+            </div>
+            <div className="filterWrap">
+              <input
+                type="number"
+                id="scoreFilter"
+                className="searchBarInput"
+                placeholder={'Input the lower score boundary'}
+                onChange={validateRealtorFields}
+                onMouseLeave={validateRealtorFields}
+                onFocus={validateRealtorFields}
+                onBlur={validateRealtorFields}
+                max={5}
+                min={1}
+              />
+            </div>
+          </div>
         </div>
 
         <button className="button widthFull height50" onClick={search}>
-          Search
+          Search Housings
+        </button>
+        <button
+          className={
+            searchRealtorsDisable
+              ? 'button widthFull height50 blocked'
+              : 'button widthFull height50'
+          }
+          onClick={searchRealtors}
+          disabled={searchRealtorsDisable}
+        >
+          Search Realtors
         </button>
       </div>
       <div className="content">
@@ -110,10 +196,20 @@ const Main = () => {
               likedHousing={likedHousing}
             />
             <Pagination
-              housingsPerPage={housingsPerPage}
-              totalHousings={housings.length}
+              itemsPerPage={housingsPerPage}
+              totalItems={housings.length}
               paginate={paginate}
               updateLikedHousings={updateLikedHousings}
+            />
+          </>
+        )}
+        {realtors && (
+          <>
+            <RealtorContainer loading={isLoading} realtors={realtors} />
+            <Pagination
+              itemsPerPage={4}
+              totalItems={realtors.length}
+              paginate={paginate}
             />
           </>
         )}
